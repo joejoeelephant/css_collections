@@ -1,0 +1,28 @@
+.grid-background {
+    background-color: #222;
+    background-image: linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+.cursor{
+    animation: animate 5s linear infinite
+}
+
+.cursor::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 40px;
+    background-color: #4ade80;
+    transform-origin: top;
+    transform: rotate(315deg);
+    left: -2.5px;
+}
+
+@keyframes animate {
+    0% {
+        filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0) drop-shadow(0 0 30px #0f0) hue-rotate(0deg)
+    }
+    100% {
+        filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0) drop-shadow(0 0 30px #0f0) hue-rotate(360deg)
+    }
+}
