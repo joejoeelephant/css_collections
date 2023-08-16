@@ -1,0 +1,16 @@
+.input-text~label span {
+    transition: transform 0.3s, color 0.3s,text-shadow 0.3s;
+}
+.input-text:focus~label span,
+.input-text:valid~label span{
+    transform: translateY(-32px);
+    color: aquamarine;
+    text-shadow: 0 0 5px aquamarine,
+    0 0 10px aquamarine,
+    0 0 30px aquamarine;
+}
+
+.input-text:focus,
+.input-text:valid{
+    border-bottom: 2px solid #fff;
+}
