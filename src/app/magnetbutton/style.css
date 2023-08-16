@@ -1,0 +1,16 @@
+.magnet-button::before{
+    content: "";
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    transform: translate(-50%, -50%);
+    background-color: crimson;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    transition: 1s, left 0s, top 0s;
+}
+.magnet-button:hover::before {
+    width: 200px;
+    height: 200px;
+}
