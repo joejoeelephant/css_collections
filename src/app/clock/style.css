@@ -1,0 +1,144 @@
+.clock{
+    border-radius: 50px;
+    background-color: #c9d5e0;
+    border-top-left-radius: 250px;
+    border-top-right-radius: 250px;
+    box-shadow: 45px 45px 45px -15px rgba(0, 0, 0, 0.15),
+    inset 15px 15px 10px rgba(255, 255, 255, 0.75),
+    -15px -15px 35px rgba(255, 255, 255, 0.5),
+    inset -2px -2px 15px rgba(255, 255, 255, 0.2);
+}
+.numbers {
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    background-color: #152b4a;
+    box-shadow: 7px 7px 22px #152b4a66,
+    inset 7px 7px 7px rgba(255, 255, 255, 0.55),
+    inset -9px -9px 15px rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.numbers span {
+    position: absolute;
+    inset: 15px;
+    text-align: center;
+    color: white;
+    font-size: 1.25rem;
+    transform: rotate(calc(var(--i)*30deg));
+}
+.numbers span b{
+    display: inline-block;
+    transform: rotate(calc(var(--i)*-30deg));
+    font-weight: 400;
+}
+
+.numbers::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 2px solid white;
+    z-index: 999;
+}
+
+.circle {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+
+.circle::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #ff2972;
+    transform: translateY(-50%);
+    box-shadow: 0 0 5px #ff2972,
+    0 0 15px #ff2972,
+    0 0 25px #ff2972;
+
+}
+
+
+.circle:nth-child(2)::before {
+    background-color: aqua;
+    box-shadow: 0 0 5px aqua,
+    0 0 15px aqua,
+    0 0 25px aqua;
+}
+
+.circle:nth-child(3)::before {
+    background-color: chartreuse;
+    box-shadow: 0 0 5px chartreuse,
+    0 0 15px chartreuse,
+    0 0 25px chartreuse;
+}
+
+.circle i {
+    position: absolute;
+    width: 6px;
+    height: 50%;
+    transform-origin: bottom;
+    transform: scaleY(0.5);
+    opacity: 0.75;
+    border-radius: 6px;
+}
+
+.circle:nth-child(1) i {
+    width: 2px;
+    background-color: #ff2972;
+}
+
+.circle:nth-child(2) i {
+    width: 4px;
+    background-color: aqua;
+}
+.circle:nth-child(3) i {
+    width: 6px;
+    background-color: chartreuse;
+}
+.circle:nth-child(2) {
+    width: 230px;
+    height: 230px;
+}
+.circle:nth-child(3) {
+    width: 180px;
+    height: 180px;
+}
+.time-digit{
+    background-color: #152b4a;
+    box-shadow: 7px 7px 22px #152b4a66,
+    inset 7px 7px 7px rgba(255, 255, 255, 0.55),
+    inset -9px -9px 15px rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+}
+.time-digit div {
+    width: 3rem;
+    font-weight: bold;
+}
+
+.blink {
+    animation: animate 1s infinite;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
