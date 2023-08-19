@@ -1,0 +1,155 @@
+@property --a{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.loading {
+    background: repeating-conic-gradient(from var(--a), var(--color) 0%, transparent 0%, transparent 40% , var(--color) 100%);
+    animation: animate-loading 2s linear infinite;
+}
+
+.loading::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background-color: #222;
+    border-radius: 50%;
+}
+.loading-dot {
+    background-color: var(--color);
+    top: -2px;
+    left: 158px;
+    transform-origin: 0px 161px;
+    filter: drop-shadow(0 0 8px var(--color)) drop-shadow(0 0 22px var(--color)) drop-shadow(0 0 32px var(--color));
+    rotate: var(--a);
+    animation: animate-loading 2s linear infinite;
+
+}
+
+@keyframes animate-loading {
+    0% {
+        --a: 0deg
+    }
+    100% {
+        --a: 360deg;
+    }
+}
+
+.animate-button {
+    background: repeating-conic-gradient(from var(--a), var(--color2) 0%, var(--color2) 5%, transparent 5%, transparent 40% , var(--color2) 50%);
+    animation: animate-button 2s linear infinite;
+}
+
+.animate-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from var(--a), var(--color1) 0%, var(--color1) 5%, transparent 5%, transparent 40% , var(--color1) 50%);
+    animation: animate-button 2s linear infinite;
+    animation-delay: -0.5s;
+    opacity: 0;
+}
+
+.animate-button:hover::before {
+    opacity: 1;
+}
+
+.animate-button::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: #222;
+}
+
+.animate-button:hover span {
+    letter-spacing: 0.125rem;
+    color: color-mix(in srgb, var(--color1) 80%, white 20%)
+}
+
+@keyframes animate-button {
+    0% {
+        --a: 0deg
+    }
+    100% {
+        --a: 360deg;
+    }
+}
+
+.loading2 {
+    background: repeating-conic-gradient(from var(--a), var(--color1) 0%, transparent 0%, transparent 60% , var(--color1) 100%);
+    animation: animate-loading 2s linear infinite;
+
+}
+
+.loading2::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from var(--a), var(--color2) 0%, transparent 0%, transparent 60% , var(--color2) 100%);
+    border-radius: 50%;
+    animation: animate-loading 2s linear infinite;
+    animation-delay: -1s;
+}
+
+.loading2::after {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    background: #222;
+    border-radius: 50%;
+    animation-delay: -1s;
+}
+
+.loading2 span {
+    position: absolute;
+    display: block;
+    inset: 0;
+    transform:  rotate(var(--a));
+    z-index: 99;
+    animation: rotate-dot 2s linear infinite;
+
+}
+
+.loading2 span::before {
+    content: "";
+    background-color: var(--color1);
+    position: absolute;
+    display: block;
+    top: -4px;
+    left: calc(50% - 4px);
+    width: 16px;
+    height: 16px;
+    transform-origin: 0px 16px;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 8px var(--color1)) drop-shadow(0 0 22px var(--color1)) drop-shadow(0 0 32px var(--color1));
+}
+
+.loading2 span::after {
+    content: "";
+    background-color: var(--color2);
+    position: absolute;
+    display: block;
+    bottom: -4px;
+    left: calc(50% - 4px);
+    width: 16px;
+    height: 16px;
+    transform-origin: 0px 16px;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 8px var(--color2)) drop-shadow(0 0 22px var(--color2)) drop-shadow(0 0 32px var(--color2));
+}
+
+
+@keyframes rotate-dot {
+    0% {
+        --a: 0deg;
+    }
+
+    100% {
+        --a: 360deg;
+    }
+}
