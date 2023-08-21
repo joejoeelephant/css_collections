@@ -1,0 +1,47 @@
+.image-box {
+    transition: transform 0.5s;
+}
+.text-box {
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+.card-box:hover .image-box {
+    transform: translateY(-100%) rotateX(90deg);
+}
+
+.card-box .image-box::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: -70px;
+    width: 140px;
+    height: 78px;
+    background-color: #fff;
+    border-bottom-left-radius: 80px ;
+    border-bottom-right-radius: 80px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.card-box:hover .text-box {
+    transform: translateY(100%) rotateX(90deg);
+}
+.card-box .text-box::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    width: 150px;
+    height: 80px;
+    background-color: rgb(15, 23, 42);
+    border-bottom-left-radius: 80px ;
+    border-bottom-right-radius: 80px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.card-box .text-box h2 {
+    box-shadow: 0 0 0 5px #f00;
+}
+.card-box:hover .content-box {
+    opacity: 1;
+}
