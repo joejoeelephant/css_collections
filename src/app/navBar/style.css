@@ -1,0 +1,82 @@
+.nav-bar {
+    background-color: #2f363e;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25),
+    inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+    
+}
+
+.nav-bar li.active::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #0f0;
+    box-shadow: 0 0 8px #0f0,
+    0 0 15px #0f0,
+    0 0 20px #0f0,
+    0 0 30px #0f0,
+    0 0 40px #0f0,
+    0 0 50px #0f0;
+}
+
+.nav-bar li.active .icon {
+    color: white;
+    transform: translateX(45px);
+    background-color: #29fd53;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.25),
+    inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+    transition-delay: 0.2s;
+}
+
+.nav-bar li .icon::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 8px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.25),
+    inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+    background-color: #2f363e;
+    transform: scale(0);
+    transition: 0.5s;
+}
+
+.nav-bar li.active .icon::before {
+    transform: scale(1);
+}
+
+.nav-text {
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+    inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+}
+
+.nav-text::before {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: -4px;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(34, 197, 94);
+    transform: rotate(45deg);
+}
+.nav-bar li:hover .nav-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav-bar li.active .nav-text {
+    left: 152px;
+    opacity: 1;
+    visibility: visible;
+}
