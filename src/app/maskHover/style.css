@@ -1,0 +1,32 @@
+.box-container {
+	background: #2a2b3a;
+}
+.grid-item {
+    grid-template-rows: auto 1fr auto;
+    background: #030014;
+}
+
+.grid-item-img {
+    --x: 0px;
+    --y: 0px;
+}
+
+.grid-item-img::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(rgb(23, 24, 37) 30%, rgb(102, 51, 238) 50%, rgb(142, 100, 255), rgb(249, 38, 114));
+	mix-blend-mode: darken;
+}
+
+.grid-item-img .grid-item-img-deco {
+    -webkit-mask-image: radial-gradient(300px circle at var(--x) var(--y), black 20%, rgba(0,0,0,0.25), transparent);
+	mask-image: radial-gradient(300px circle at var(--x) var(--y), black 20%, rgba(0,0,0,0.25), transparent);
+}
+
+.grid-item-img:hover .grid-item-img-deco{
+    opacity: 1;
+}

@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import './style.css'
 import HomeIcon from '@mui/icons-material/Home';
 export default function Page() {
-    const [activeIndex, setActiveIndex] = useState(0)
+    const [activeIndex, setActiveIndex] = useState(0);
     return (
         <div className='min-h-screen bg-slate-900'>
             <ul className='absolute left-0 w-28 h-full flex justify-center items-center flex-col gap-3 nav-bar'>
