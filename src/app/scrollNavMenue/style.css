@@ -1,0 +1,36 @@
+.nav-container {
+    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.5))
+}
+.nav-item.active .nav-icon {
+    transform: translateY(-32px);
+}
+
+.nav-item.active .nav-text{
+    transform: translateY(-4px);
+    background-color: palevioletred;
+    opacity: 1;
+}
+
+.indicator::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    left: -28px;
+    top: 6px;
+    box-shadow: 18px 18px #FFF;
+}
+
+.indicator::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    right: -28px;
+    top: 6px;
+    box-shadow: -18px 18px #FFF;
+}

@@ -1,0 +1,50 @@
+.grid__box {
+    display: grid;
+    grid-template-areas: 
+        "one"
+        "two"
+        "three"
+        "four"
+        "five"
+    ;
+    gap: 0.5rem;
+    width: 75%;
+}
+
+
+@media screen and (min-width: 768px) {
+    .grid__box { 
+        grid-template-areas: 
+        "one one two three"
+        "four five five three";
+    }
+}
+
+.grid__item {
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10rem;
+}
+
+
+.grid__item:nth-child(1) {
+    grid-area: one;
+}
+
+.grid__item:nth-child(2) {
+    grid-area: two;
+}
+
+.grid__item:nth-child(3) {
+    grid-area: three
+}
+
+.grid__item:nth-child(4) {
+    grid-area: four;
+}
+
+.grid__item:nth-child(5) {
+    grid-area: five;
+}
