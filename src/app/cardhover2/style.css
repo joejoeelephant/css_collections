@@ -1,0 +1,29 @@
+.card-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #000, transparent, #000);
+}
+
+.card-item::after {
+    content: "Text";
+    position: absolute;
+    color: #000;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    text-transform: uppercase;
+    opacity: 0;
+    letter-spacing: 0.5rem;
+    transition: 0.5s;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition-delay: 0s;
+}
+
+.card-item:hover::after {
+    opacity: 1;
+    bottom: -60px;
+    transition-delay: 0.25s;
+}
